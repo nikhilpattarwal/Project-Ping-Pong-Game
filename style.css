@@ -1,0 +1,109 @@
+*, *::after *::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    background-color: var(--background-color);
+    overflow: hidden;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------changing colors using root----------------------- */
+:root{
+--hue:100;
+--saturation:50%;
+--foreground-color:hsl(var(--hue), var(--saturation) ,75%);
+--background-color:hsl(var(--hue), var(--saturation) ,20%);
+}
+
+/*--------------------------------- paddles top and bottom--------------- */
+.paddle{
+--position: 50;  
+position: absolute;
+height: 1.8vw;
+width: 18vw;
+background-color: var(--foreground-color);
+border-radius: 5vw;
+left: calc(var(--position)*1vw);
+transform: translateX(-50%);
+text-align: center;
+color:  var(--background-color);
+line-height: 3.5vh;
+font-size: medium;
+font-weight: bold;
+font-family: sans-serif;
+}
+
+.paddle.top{
+top: .5vh;
+}
+
+.paddle.bottom{
+bottom: .5vh;
+}
+
+/* -----------------------------------ball------------------------------ */
+.ball{
+--x: 50;
+--y: 50;  
+position: absolute;
+height: 4vh;
+width: 4vh;
+background-color: var(--foreground-color);
+border-radius: 50%;
+left: calc(var(--x)*1vw);
+top: calc(var(--y)*1vh);
+transform: translate(-50%,-50%);
+}
+
+
+
+.score{
+width:100vw;
+height:100vh;
+display: flex;
+flex-direction: column;
+color: var(--foreground-color);
+font-size: 10vh;
+align-items: center;
+justify-content: space-around;
+opacity: .5;
+}
+
+
+.scores{
+    display:none;
+}
+
+
+.divider{
+    border: 2px dashed;
+    border-color: var(--foreground-color) ; 
+    width: 100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ring{
+  position: absolute;
+  height: 6vh;
+  width: 6vh;
+  background-color: var(--foreground-color);
+  border-radius: 50%;
+}
+
+.read-me{
+    position: absolute;
+    top:20vh;
+    font-size: 3vh;
+}
+
+.read-me-2{
+    position: absolute;
+    top:70vh;
+    font-size: 3vh;
+}
